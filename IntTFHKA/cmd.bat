@@ -1,0 +1,1 @@
+C:\IntTFHKA\IntTFHKA.exe SendFileCmd(C:\IntTFHKA\selectrapos.txt)
