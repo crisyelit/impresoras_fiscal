@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+
+<menuitem name="ConGestIglesia" id="menu_principal_horizontal" sequence="3"/>
+<menuitem name="Control de gestión para la iglesia" id="menu_principal_vertical" parent="menu_principal_horizontal" sequence="3" />
+<menuitem name="Configuracion Membresia" id="menu_segundario_vertical" parent="menu_principal_horizontal" sequence="3" />
+
+      
+    <record model="ir.ui.view" id="view_hsn_mins_ministerio_form">
+        <field name="name">hsn.mins.ministerio.form</field>
+        <field name="model">hsn.mins.ministerio</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="hsn.mins.ministerio">
+            <group col="4" colspan="2">
+                <field name="codigo" select="1"/>
+                <field name="ministerio" select="2"/>
+                <field name="Lider" select="3"/>
+
+            </group>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_hsn_mins_ministerio_tree">
+        <field name="name">hsn.mins.ministerio.tree</field>
+        <field name="model">hsn.mins.ministerio</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="hsn.mins.tipo_ministerio">
+                <field name="codigo" select="1"/>
+                <field name="ministerio" select="2"/>
+                <field name="Lider" select="3"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_hsn_mins_ministerio">
+        <field name="name">Ministerio</field>
+        <field name="res_model">hsn.mins.ministerio</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="Membresia/Configuracion/Ministerio" id="menu_hsn_mins_ministerio" action="action_hsn_mins_ministerio"/>
+
+       
+    <record model="ir.ui.view" id="view_hns_mins_zonas_form">
+        <field name="name">hns.mins.zonas.form</field>
+        <field name="model">hns.mins.zonas</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="hns.mins.zonas">
+            <group col="4" colspan="2">
+                <field name="zona_territorial_id" select="1"/>
+                <field name="nombre" select="2"/>
+                <separator string="'Celula'" colspan="4"/>
+                <field name="celula_id" colspan="4" nolabel="1" select="0"/>
+
+            </group>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_hns_mins_zonas_tree">
+        <field name="name">hns.mins.zonas.tree</field>
+        <field name="model">hns.mins.zonas</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="hns.mins.zonas">
+                <field name="zona_territorial_id"/>
+                <field name="nombre"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_hns_mins_zonas">
+        <field name="name">Registro Maestro de Zonas Territorial</field>
+        <field name="res_model">hns.mins.zonas</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="Membresia/Configuracion/Zonas" id="menu_hns_mins_zonas" action="action_hns_mins_zonas"/>
+
+        
+    <record model="ir.ui.view" id="view_hsn_mins_celula_form">
+        <field name="name">hsn.mins.celula.form</field>
+        <field name="model">hsn.mins.celula</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="hsn.mins.celula">
+            <group col="4" colspan="2">
+                <field name="celula_id" select="1"/>
+                <field name="zona_territorial_id" select="0"/>
+                <field name="lider_id" select="0"/>
+                <field name="ayudante_id" select="0"/>
+                <field name="anfitrion" select="2"/>
+                <field name="telefono" select="0"/>
+                <field name="direccion" select="0"/>
+                <field name="numero_miembro" select="0"/>            
+                <separator string="'Observaciones'" colspan="4"/>
+                <field name="observacion" colspan="4" nolabel="1" select="0"/>
+                <field name="leccion" select="0"/>
+                <field name="ofrenda" select="0"/>
+
+            </group>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_hsn_mins_celula_tree">
+        <field name="name">hsn.mins.celula.tree</field>
+        <field name="model">hsn.mins.celula</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="hsn.mins.celula">
+                <field name="celula_id"/>
+                <field name="zona_territorial_id"/>
+                <field name="lider_id"/>
+                <field name="ayudante_id"/>
+                <field name="anfitrion"/>
+                <field name="telefono"/>
+                <field name="direccion"/>
+                <field name="numero_miembro"/>
+                <field name="observacion"/>
+                <field name="leccion"/>
+                <field name="ofrenda"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_hsn_mins_celula">
+        <field name="name">Registro Maestro de Celula</field>
+        <field name="res_model">hsn.mins.celula</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="membresia/Celulas/Registro Maestro de celula" id="menu_hsn_mins_celula" action="action_hsn_mins_celula"/>
+
+        
+    <record model="ir.ui.view" id="view_hsn_miembros_partner_form">
+        <field name="name">res.partner.form.inherit.hsn.miembros_partner</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+			<field name="website" position="after">
+			<!-- Campos de Miembros -->
+				<field name="profesiones_id" 	string="Profesión u oficio"     attrs="{'invisible': [('customer','!=', True)]}" /> 
+				<field name="direccion_oficina" string="Dirección Trabajo"      attrs="{'invisible': [('customer','!=', True)]}" />
+				<field name="telefono_oficina"  string="Teléfono Oficina"       attrs="{'invisible': [('customer','!=', True)]}" />
+				<field name="estado_civil"      string="Estado civil"           attrs="{'invisible': [('customer','!=', True)]}" />
+			</field>
+				<field name="title" position="after">
+					<field name="numero_id"         string="DPI / Cedula / Otro"    attrs="{'invisible': [('customer','!=', True)]}" />
+					<field name="fecha_nacimiento" 	string="Fecha de Nacimiento"     attrs="{'invisible': [('customer','!=', True)]}" />
+				</field>
+            <page position="after" string="Accounting">
+                <page string="Datos Familiares">
+                    <group col="4">
+					<separator string="Datos Familiares" colspan="4"/>
+                    <field name="partner_conyuge_id" string="Conyuge"            attrs="{'invisible': [('customer','!=', True)]}" />
+                    <field name="partner_hijo_id" string="Hijo"            attrs="{'invisible': [('customer','!=', True)]}" />
+					</group>
+				</page>
+            </page>
+            <page position="after" string="Accounting">
+                <page string="Información Conversión">
+                    <group col="4">
+						<separator string="Información Conversión" colspan="4"/>
+						<field name="nuevo_creyente"/>
+	       	            <field name="fecha_conversion"/>
+            	        <field name="lugar_conversion"/>
+       	        	    <field name="donde_congregaba"/>
+           	        	<field name="tiempo_asistir"/>
+	           	        <field name="todos_convertidos"/>
+	           	        <field name="bautismo"/>
+	           	        <field name="fecha_bautismo_agua"/>
+	           	        <field name="fecha_bautismo_es"/>
+	           	        <field name="carta_pastor"/>
+	           	        <field name="asiste_discipulado"/>
+	           	        <field name="se_indentifica"/>
+	           	        <field name="doctrina_basica"/>
+	           	        <field name="partner_discipulador_id"/>
+	           	        <field name="partner_recomienda_id"/>
+	           	        <field name="observaciones"/>
+	           	    </group>
+	           	 </page>
+	        </page>					
+            <page position="after" string="Accounting">
+                <page string="Datos Celula">
+                    <group col="4">
+					<separator string="Datos Celula" colspan="4"/>
+	       	            <field name="zona_territorial_id"/>
+            	        <field name="ofrenda"/>
+       	        	    <field name="diezmo"/>
+					</group>
+				</page>
+            </page>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_hsn_miembros_tree">
+        <field name="name">hsn.miembros.tree</field>
+        <field name="model">hsn.miembros</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="hsn.miembros">
+                <<field name="numero_id"/>
+                <field name="zona_territorial_id"/>
+                <field name="telefono"/>
+                <field name="nuevo_creyente"/>
+                <field name="bautismo"/>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_hsn_miembros">
+        <field name="name">Registro Maestro de Miembros</field>
+        <field name="res_model">hsn.miembros</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="Membresia/Registro Maestro de Miembros" id="menu_hsn_miembros" action="action_hsn_miembros"/>
+
+
+        
+</data>
+</openerp>

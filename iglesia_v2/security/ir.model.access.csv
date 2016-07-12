@@ -1,0 +1,10 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_hsn_familiares","hsn.familiares","model_hsn_familiares","base.group_user",1,0,0,0
+"access_fnd_pas_convenios","fnd.pas.convenios","model_fnd_pas_convenios","base.group_user",1,0,0,0
+"access_hsn_mins_tipo_ministerio","hsn.mins.tipo_ministerio","model_hsn_mins_tipo_ministerio","base.group_user",1,0,0,0
+"access_fnd_pas_nivel_academico","fnd.pas.nivel_academico","model_fnd_pas_nivel_academico","base.group_user",1,0,0,0
+"access_hsn_parentescos","hsn.parentescos","model_hsn_parentescos","base.group_user",1,0,0,0
+"access_hns_mins_zonas","hns.mins.zonas","model_hns_mins_zonas","base.group_user",1,0,0,0
+"access_hsn_mins_casapaz","hsn.mins.casapaz","model_hsn_mins_casapaz","base.group_user",1,0,0,0
+"access_hsn_miembros","hsn.miembros","model_hsn_miembros","base.group_user",1,0,0,0
+"access_hns_mins_celulas","hns.mins.celulas","model_hns_mins_celulas","base.group_user",1,0,0,0

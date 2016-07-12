@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+
+    <record model="ir.ui.view" id="view_iglesia_res_partner_form">
+        <field name="name">Iglesia</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+					<!-- Ingresando Campos en orden deseado heredando Clientes -->
+			<field name="arch" type="xml">
+				<field name="website" position="after">
+					<!-- Campos de Clientes -->
+					<field name="profesiones_id" 	string="Profesión u oficio"     attrs="{'invisible': [('customer','!=', True)]}" /> 
+					<field name="direccion_oficina" string="Dirección Trabajo"      attrs="{'invisible': [('customer','!=', True)]}" />
+					<field name="telefono_oficina"  string="Teléfono Oficina"       attrs="{'invisible': [('customer','!=', True)]}" />
+					<field name="estado_civil"      string="Estado civil"           attrs="{'invisible': [('customer','!=', True)]}" />
+				</field>
+				<field name="title" position="after">
+					<field name="numero_id"         string="DPI / Cedula / Otro"    attrs="{'invisible': [('customer','!=', True)]}" />
+                    <field name="partner_conyuge_id" string="Conyuge"            attrs="{'invisible': [('customer','!=', True)]}" />
+					<field name="fecha_nacimiento" 	string="Fecha de Nacimiento"     attrs="{'invisible': [('customer','!=', True)]}" />
+				</field>
+				<!-- hacer invisibles etiquetas dentro de formulario -->
+				<!-- <xpath expr="/form/sheet/div/label" position="after - attributes"> 
+				 </xpath>
+				<attribute name="invisible">True</attribute>
+				
+				Agregando el pleceholder al campo name 
+				
+				<xpath expr="/form/sheet/div/h1/field[@name="name"]" position="after - attributes"> 
+				</xpath>
+				 <attribute name="placeholder">Iglesia</attribute> -->
+				
+            <page position="after" string="Accounting">
+                <page string="Información Conversión">
+                    <group col="4">
+                        <separator string="Información del creyente" colspan="4"/>
+	       	            <field name="nuevo_creyente"/>
+	       	            <field name="fecha_conversion"/>
+            	        <field name="lugar_conversion"/>
+       	        	    <field name="donde_congregaba"/>
+           	        	<field name="tiempo_asistir"/>
+	           	        <field name="todos_convertidos"/>
+	           	        <field name="fecha_bautismo_agua"/>
+	           	        <field name="fecha_bautismo_es"/>
+	           	        <field name="carta_pastor"/>
+	           	        <field name="asiste_discipulado"/>
+	           	        <field name="se_indentifica"/>
+	           	        <field name="doctrina_basica"/>
+	           	        <field name="partner_discipulador_id"/>
+	           	        <field name="partner_recomienda_id"/>
+	           	        <field name="observaciones"/>
+
+                    </group>
+                </page>
+			</page>
+			 <page position="after" string="Accounting">
+				<xpath expr="/form/sheet/div/h1/field[@name="name"]" position="after - attributes"> 
+				</xpath>
+				 <attribute name="placeholder">Iglesia</attribute> -->
+        </field>
+    </record>
+
+
+
+</data>
+</openerp>
